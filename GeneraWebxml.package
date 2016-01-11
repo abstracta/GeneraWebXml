@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Package xmlns="http://schemas.genexus.com/addin/v1.0" 
+         id="e0bb3f35-dd2b-46ee-85e8-60ce46577c12" 
+         name="GeneraWebxml">
+
+  <Resources>
+    <Resource type="strings" name="Abstracta.Packages.GeneraWebxml.RsxCommands"/>
+  </Resources>
+  
+  <Commands>
+    <CommandDefinition id="GeneraWebxmlCommand" />
+  </Commands>
+
+  <Menus>
+    <Menu type="menubar">
+      <Popup name="JavaTools" >
+        <Command refid="GeneraWebxmlCommand" />
+      </Popup>
+    </Menu>
+  </Menus>
+  
+</Package>

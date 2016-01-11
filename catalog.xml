@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Projects>
+  <Project Name="GeneraWebxmlPackage" Location=".">
+    <!--
+		The Package assembly needs to be copied to the Packages
+		folder below the base execution path.
+		-->
+    <File Name="Abstracta.Packages.GeneraWebxml.dll" Target="Packages"/>
+  </Project>
+</Projects>
+

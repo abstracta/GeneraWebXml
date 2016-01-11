@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85958A8E-F112-4996-994A-2090F8814200}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abstracta.Packages.GeneraWebxml</RootNamespace>
+    <AssemblyName>Abstracta.Packages.GeneraWebxml</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Artech.Architecture.Common">
+      <HintPath>C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Bin\Artech.Architecture.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Artech.Architecture.UI.Framework">
+      <HintPath>C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Bin\Artech.Architecture.UI.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Artech.Common">
+      <HintPath>C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Bin\Artech.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Artech.Common.Framework">
+      <HintPath>C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Bin\Artech.Common.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Artech.Common.Properties">
+      <HintPath>C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Bin\Artech.Common.Properties.dll</HintPath>
+    </Reference>
+    <Reference Include="Artech.Genexus.Common">
+      <HintPath>C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Bin\Artech.Genexus.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Artech.Udm.Framework">
+      <HintPath>C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Bin\Artech.Udm.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1PlatformSDK\Src\CommonPackageInfo.cs">
+      <Link>Properties\CommonPackageInfo.cs</Link>
+    </Compile>
+    <Compile Include="CommandKeys.cs" />
+    <Compile Include="CommandManager.cs" />
+    <Compile Include="Package.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RsxCommands.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RsxCommands.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GeneraWebxml.package" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="catalog.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RsxCommands.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RsxCommands.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy  /y "D:\Abstracta\GeneraWebxml\GeneraWebxml\bin\Debug\Abstracta.Packages.GeneraWebxml.dll" "C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1\Packages\Abstracta.Packages.GeneraWebxml.dll"
+copy  /y "D:\Abstracta\GeneraWebxml\GeneraWebxml\bin\Debug\Abstracta.Packages.GeneraWebxml.pdb" "C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1\Packages\Abstracta.Packages.GeneraWebxml.pdb"
+"C:\Program Files (x86)\Artech\GeneXus\GeneXusXEv1\genexus.exe" /install</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
